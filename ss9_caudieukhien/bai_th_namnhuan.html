@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra năm nhuận</title>
+</head>
+<body>
+<div>
+    <h2>Bài thực hành - kiểm tra năm nhuận</h2>
+    <label for="nam">Nhập năm là: </label>
+    <input type="number" placeholder="Nhập năm" id="nam"/></br>
+    <div id="kqkiemtra"></div>
+    <button onclick="kiemtra();" value="Chuyendoi">Kiểm tra</button>
+</div>
+<script>
+    function kiemtra() {
+        let n = parseInt(document.getElementById("nam").value);
+        /*if (n % 4 == 0) {
+            if (n % 100 == 0 ){
+                if (n % 400 == 0) {
+                    document.getElementById("kqkiemtra").innerHTML = n + " là năm nhuận";
+                } else {
+                    document.getElementById("kqkiemtra").innerHTML = n + " ko phai là năm nhuận";
+                }
+            } else {
+                document.getElementById("kqkiemtra").innerHTML = n + " là năm nhuận";
+            }
+        } else {
+            document.getElementById("kqkiemtra").innerHTML = n + "  ko phai là năm nhuận";
+        }*/
+        let kt = false;
+        if (n % 4 == 0) {
+            if ( n % 100 == 0 ) {
+                if ( n % 400 == 0) {
+                    kt = true;
+                }
+            } else {
+                kt = true;
+            }
+        }
+        if (kt) {
+            document.getElementById("kqkiemtra").innerHTML = n + " là năm nhuận";
+        } else {
+            document.getElementById("kqkiemtra").innerHTML = n + " ko phai là năm nhuận";
+        }
+    }
+</script>
+</body>
+</html>

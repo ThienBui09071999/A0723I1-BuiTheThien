@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất trong 3 số</title>
+</head>
+<body>
+<div>
+    <h2> Bài 4 - Tìm số lớn nhất trong 3 số</h2>
+    <label for="soa">Nhập số a : </label>
+    <input type="number" placeholder="Nhập số" id="soa"/></br>
+    <label for="sob">Nhập số b : </label>
+    <input type="number" placeholder="Nhập số" id="sob"/></br>
+    <label for="soc">Nhập số c : </label>
+    <input type="number" placeholder="Nhập số" id="soc"/></br>
+    <button onclick="result_check();" value="finding">Finding</button>
+    </br>
+    <div id="result"></div>
+</div>
+<script>
+    function result_check() {
+        let a = parseInt(document.getElementById("soa").value);
+        let b = parseInt(document.getElementById("sob").value);
+        let c = parseInt(document.getElementById("soc").value);
+        let max = a;
+        if (max < b) {
+            max = b;
+        }
+        if (max < c) {
+            max = c;
+        }
+        document.getElementById("result").innerHTML = "Giá trị lớn nhất là " + max;
+    }
+</script>
+</body>
+</html>
