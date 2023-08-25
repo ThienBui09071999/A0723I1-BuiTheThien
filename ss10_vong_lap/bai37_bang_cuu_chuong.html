@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sinh bảng cửu chương</title>
+    <style>
+        td {
+            text-align: center;
+            width: 90px;
+        }
+    </style>
+</head>
+<body>
+<h2 style="text-align: center">Bảng Cửu Chương</h2>
+<script>
+    let sout;
+    sout = "<table border='1' width='810' cellspacing='0' cellpadding='3' align='center'>"
+    for (i = 2; i <= 9; i++) {
+        sout = sout + "<tr>";
+        for (j = 1; j <= 9; j++) {
+            sout = sout + "<td>" + i +" x " + j + " = "+ i*j + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>";
+    document.write(sout);
+</script>
+</body>
+</html>
