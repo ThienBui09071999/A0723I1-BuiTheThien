@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+    <label for="string">Nhập từ: </label>
+    <input type="text" name="" id="string">
+    <button onclick="transcript()">Dịch</button>
+    <p id="result"></p>
+    <script>
+        function transcript() {
+            //orange
+            let arrEng = ["banana", "apple", "orange", "pen", "pencil", "book","one","two","three"];
+            let arrVie = ["chuối", "táo", "cam", "bút", "bút chì", "sách","một","hai","ba"];
+            let string = document.getElementById("string").value;
+            // let index = arrEng.findIndex(eng => eng === string);
+            let index = -1;
+            for (let i = 0; i < arrEng.length; i++) {
+                if (arrEng[i] === string) {
+                    index = i;
+                    break;
+                }
+            }
+            // document.getElementById("result").innerHTML = index !== -1 ? arrVie[index] : "Không tìm thấy!"
+            if (index !== -1) {
+                document.getElementById("result").innerHTML = arrVie[index];
+            } else {
+                document.getElementById("result").innerHTML = "Không tìm thấy!";
+            }
+            // let indexEng;
+            // let result = "";
+            // for (let i = 0; i < arrEng.length; i++) {
+            //    if (string === arrEng[i] ) {
+            //        indexEng = i;
+            //        break;
+            //    } else {
+            //        indexEng = -1;
+            //    }
+            // }
+            // if (indexEng === -1) {
+            //     result = "Không tìm thấy";
+            // } else  {
+            //     for (let i = 0; i < arrVie.length; i++) {
+            //         if (indexEng === i) {
+            //             result = arrVie[i];
+            //         }
+            //     }
+            // }
+        }
+    </script>
+</body>
+</html>
