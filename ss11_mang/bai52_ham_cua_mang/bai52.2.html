@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn (-) vào hai số chẵn trong chuỗi</title>
+</head>
+<body>
+<script>
+    let number = prompt("Nhập số vào là ");
+    let string = number.toString();
+    let result = [string[0]];
+    for(let x=1; x<string.length; x++)
+    {
+        if((string[x-1] % 2 === 0)&&(string[x] % 2 === 0))
+        {
+            result.push('-', string[x]);
+        }
+        else
+        {
+            result.push(string[x]);
+        }
+    }
+    document.write("chuỗi sau khi chèn - là ");
+    document.write(result.join(''));
+</script>
+</body>
+</html>
