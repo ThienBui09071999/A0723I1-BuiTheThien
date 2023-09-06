@@ -5,15 +5,24 @@
     <title>Đếm số từ trong một chuỗi</title>
 </head>
 <body>
+<input type="button" name="" id="" value="Bắt đầu" onclick="run()" />
+<p id="result1"></p>
+<p id="result2"></p>
 <script>
-    let str = prompt("Chuỗi bạn muốn nhâp là ");
-    let count = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (isNaN(str[i])) {
-            count++;
+    function run(){
+        var arr = prompt("Nhập vào chuỗi bạn muốn kiểm tra: ").trim();
+        // var arr = input.toString();
+        var count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === " " && arr[i+1]=== " "){
+                continue;
+            } else if ( arr[i] === " "){
+                count += 1;
+            }
         }
+        document.getElementById("result1").innerHTML = "Chuỗi bạn vừa nhập là : " + arr;
+        document.getElementById("result2").innerHTML = "Chuỗi bạn vừa nhập có: " + (count + 1) + " Từ";
     }
-    document.write("Số từ có trong chuỗi là " +count);
 </script>
 </body>
 </html>
