@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm tăng 1 giá trị</title>
+</head>
+<body>
+<label for="inputNumber">Nhập số</label>
+<input type="number" name="" id="inputNumber" oninput="increaseToNumber()">
+<p>Result: <span id="resultNumber"></span></p>
+<script>
+    function increaseToNumber(){
+        var number = document.getElementById("inputNumber").value;
+        number++;
+        document.getElementById("resultNumber").innerHTML = number;
+    }
+</script>
+</body>
+</html>

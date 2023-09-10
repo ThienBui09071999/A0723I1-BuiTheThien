@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm chòm sao</title>
+</head>
+<body>
+<label for="string">Nhập Ngôi sao: </label>
+<input type="text" name="" id="string">
+<button onclick="findConstellation()">Find</button>
+<p id="result"></p>
+<script>
+    function findConstellation() {
+        //orange
+        let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let arrConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let string = document.getElementById("string").value;
+        // let index = arrEng.findIndex(eng => eng === string);
+        let index = -1;
+        for (let i = 0; i < arrStar.length; i++) {
+            if (arrStar[i] === string) {
+                index = i;
+                break;
+            }
+        }
+        // document.getElementById("result").innerHTML = index !== -1 ? arrVie[index] : "Không tìm thấy!"
+        if (index !== -1) {
+            document.getElementById("result").innerHTML = "Chòm sao tương ứng là: " +arrConstellation[index];
+        } else {
+            document.getElementById("result").innerHTML = "Không tìm thấy chòm sao tương ứng!";
+        }
+    }
+</script>
+</body>
+</html>
