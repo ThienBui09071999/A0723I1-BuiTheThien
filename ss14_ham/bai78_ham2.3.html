@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tích giai thừa</title>
+</head>
+<body>
+<script>
+    function giaiThua(number) {
+        let factorial = 1;
+        if (number === 0 || number ===1) {
+            return 1;
+        } else {
+            for (let i = 1; i <=number ; i++) {
+                factorial = factorial * i;
+            }
+        }
+        return factorial;
+    }
+    let number = parseInt(prompt("Nhập số cần tính giai thừa"));
+    if (number < 0) {
+        location.reload();
+    }
+    alert("Giai thừa của " + number + " là " + giaiThua(number));
+</script>
+</body>
+</html>

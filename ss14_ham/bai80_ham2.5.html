@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+    function maxNumber(a,b,c) {
+        let max = a;
+        if (max < b) {
+            max = b;
+        }
+        if (max < c) {
+            max = c;
+        }
+        return max;
+    }
+    let a = parseFloat(prompt("Nhập số thứ nhất:"));
+    let b = parseFloat(prompt("Nhập số thứ hai:"));
+    let c = parseFloat(prompt("Nhập số thứ ba:"));
+    document.write("Giá trị lớn nhất là " + maxNumber(a,b,c));
+</script>
+</body>
+</html>

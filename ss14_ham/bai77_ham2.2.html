@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính diện tích và chu vi</title>
+</head>
+<body>
+<label for="inputRadius">Bán kính (m)</label>
+<input type="number" name="" id="inputRadius" oninput="acreageAndPerimeter()">
+<p>Diện tích: <span id="resultAcreage"></span>(m<sup style="font-size: 0.3cm">2</sup>)</p>
+<p>Chu vi: <span id="resultPerimeter"></span>(m<sup style="font-size: 0.3cm">2</sup>)</p>
+<script>
+    function acreageAndPerimeter() {
+        let r = parseFloat(document.getElementById("inputRadius").value);
+        let acreage = r * r * 3.14;
+        let perimeter = 2 * 3.14 * r;
+        document.getElementById("resultAcreage").innerHTML = acreage;
+        document.getElementById("resultPerimeter").innerHTML = perimeter;
+    }
+</script>
+</body>
+</html>

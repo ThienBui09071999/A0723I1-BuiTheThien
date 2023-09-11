@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi chỗ hai số nguyên</title>
+</head>
+<body>
+<script>
+    function swap() {
+        let a = parseInt(prompt("Nhập số nguyên thứ nhất"));
+        let b = parseInt(prompt("Nhập số nguyên thứ hai"));
+        let arr = [a,b];
+        temp = a;
+        a = b;
+        b = temp;
+        document.write("a = " +a + " và b = " +b);
+    }
+    swap();
+</script>
+</body>
+</html>

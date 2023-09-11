@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra kí tự số</title>
+</head>
+<body>
+<script>
+    function checkNumber(char) {
+        if (!isNaN(char)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    let char = prompt("Nhập kí tự");
+    if (checkNumber(char)) {
+        alert("Đây là kí tự số ");
+    } else {
+        alert("Đây không phải kí tự số");
+    }
+</script>
+</body>
+</html>

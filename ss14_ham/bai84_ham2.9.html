@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số kí tự có trong mảng</title>
+</head>
+<body>
+<input type="button" value="Bất đầu" name="" id="" onclick="findChar()">
+<p id="inputArr"></p>
+<p id="result"></p>
+<script>
+    function findChar(){
+        let number = parseInt(prompt("Nhập vào chiều dài của mảng"))
+        var arr = new Array(number);
+        var count = 0;
+        for (let i = 0; i < number; i++) {
+            arr[i] = prompt("Nhập vào phần tử " + (i+1));
+
+        }
+        document.getElementById("inputArr").innerHTML = "Mảng bạn vừa nhập là: " + arr;
+        let checkChar = prompt("Nhập vào ký tự bạn muốn kiểm tra ");
+        for (let i = 0; i < number; i++){
+            if ( checkChar === arr[i]){
+                count += 1;
+            }
+        }
+        console.log(arr);
+        console.log(count);
+        if ( count > 0){
+            document.getElementById("result").innerHTML = "Số lầ xuất hiện của ký tự " + checkChar + " là: " + count;
+        } else document.getElementById("result").innerHTML = "Số lầ xuất hiện của ký tự " + checkChar + "là: -1";
+
+    }
+</script>
+</body>
+</html>
