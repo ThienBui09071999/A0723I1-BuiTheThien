@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nguyên âm</title>
+</head>
+<body>
+<script>
+    function isVowel(char) {
+        switch (char) {
+            case "o":
+            case "u":
+            case "i":
+            case "a":
+            case "e":
+            case "O":
+            case "U":
+            case "I":
+            case "A":
+            case "E":
+            {
+                return true;
+            }
+            default : return false;
+        }
+    }
+    var char = prompt("Điền 1 ký tự(a-z,A-Z) :");
+    if (isVowel(char)) {
+        alert( char + " là Nguyên âm");
+    } else {
+        alert(char + " là phụ âm");
+    }
+</script>
+</body>
+</html>

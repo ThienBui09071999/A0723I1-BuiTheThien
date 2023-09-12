@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lương</title>
+</head>
+<body>
+<h2>Bảng tính lương</h2>
+<label for="inputSalary">Gross salary</label>
+<input type="text" name="" id="inputSalary" oninput="calculateSalary()">vnd
+<p>Net salary: <span id="resultNetSalary"></span></p>
+<p>Income Tax: <span id="resultIncomeTax"></span></p>
+
+
+<script>
+    function calculateSalary(){
+        let grossSalary = document.getElementById("inputSalary").value;
+        let incomeTax = 0;
+        let netSalary = 0;
+        if (grossSalary < 0) {
+            location.reload();
+        } else {
+            if (grossSalary < 7000000) {
+                incomeTax = grossSalary * 5/100;
+                netSalary = grossSalary - incomeTax;
+            } else if (grossSalary<15000000) {
+                incomeTax = grossSalary * 10/100;
+                netSalary = grossSalary - incomeTax;
+            } else {
+                incomeTax = grossSalary * 15/100;
+                netSalary = grossSalary - incomeTax;
+            }
+        }
+        document.getElementById("resultNetSalary").innerHTML = netSalary +" vnd";
+        document.getElementById("resultIncomeTax").innerHTML = incomeTax + " vnd";
+    }
+
+</script>
+</body>
+</html>
