@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác rỗng</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt("Nhập chiều cao của tam giác"));
+    function drawTriangle(height) {
+        for (let i = 1; i <= height; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (j === 1 || j === i || i === height) {
+                    document.write('*');
+                } else {
+                    document.write("&nbsp; ");
+                }
+            }
+            document.write('<br/>');
+        }
+    }
+    drawTriangle(height);
+</script>
+</body>
+</html>

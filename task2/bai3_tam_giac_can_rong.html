@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ tam giác cân rỗng</title>
+</head>
+<body>
+<script>
+    let height = parseInt(prompt("Nhập chiều cao của tam giác"));
+    function drawTriangle(height) {
+        while (height<=0) {
+            height = parseInt(prompt("Nhập chiều cao hình tam giác"));
+        }
+        for (let i = 1;i <= height; i++) {
+            //vong lap for dieu khien cac khoang trong
+            for (let j = 1; j <= height - i; j++) {
+                document.write("&nbsp; ");
+            }
+            // vong lap for de in dau *
+            for (let j = 1; j <= 2*i-1; j++) {
+                if (j === 1 || j === 2*i-1 || i === height) {
+                    document.write("*");
+                } else {
+                    document.write("&nbsp; ");
+                }
+            }
+            document.write("</br>");
+        }
+    }
+    drawTriangle(height);
+</script>
+</body>
+</html>

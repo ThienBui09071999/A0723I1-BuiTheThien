@@ -6,16 +6,28 @@
 </head>
 <body>
 <script>
-    function swap() {
-        let a = parseInt(prompt("Nhập số nguyên thứ nhất"));
-        let b = parseInt(prompt("Nhập số nguyên thứ hai"));
-        let arr = [a,b];
-        temp = a;
-        a = b;
-        b = temp;
-        document.write("a = " +a + " và b = " +b);
+    // function swap() {
+    //     let a = parseInt(prompt("Nhập số nguyên thứ nhất"));
+    //     let b = parseInt(prompt("Nhập số nguyên thứ hai"));
+    //     let arr = [a,b];
+    //     temp = a;
+    //     a = b;
+    //     b = temp;
+    //     document.write("a = " +a + " và b = " +b);
+    // }
+    // swap();
+    let x = 5;
+    let y = 10;
+    let arr = [x, y]
+    function swap(arr) {
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
     }
-    swap();
+    console.log(arr);
+    swap(arr);
+    console.log(arr);
+
 </script>
 </body>
 </html>
