@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp nhiệt độ</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        celsiusToFahrenheit() {
+            return (this.celsius * 9/5) + 32;
+        }
+        celsiusToKelvin() {
+            return this.celsius + 273.15;
+        }
+    }
+    let celsius = parseFloat(prompt("Nhập nhiệt độ C bạn muốn :"));
+    let temperature = new Temperature(celsius);
+
+    if (celsius >= -273) {
+        alert("Fahrenheit is " +temperature.celsiusToFahrenheit());
+        alert("Kelvin is " +temperature.celsiusToKelvin());
+        let a = confirm("Thử lại");
+        if (a) {
+            window.location.reload();
+        } else {
+            alert("Thì thui :(")
+        }
+    } else {
+        alert("Thử lại");
+        window.location.reload();
+    }
+
+</script>
+</body>
+</html>

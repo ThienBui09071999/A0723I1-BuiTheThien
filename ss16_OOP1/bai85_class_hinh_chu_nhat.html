@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lớp hình chữ nhật</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(length,width) {
+            this.width = width;
+            this.length = length;
+        }
+        //dien tich
+        acreage() {
+            return this.width * this.length;
+        }
+        //chu vi
+        perimeter() {
+            return (this.width + this.length) * 2;
+        }
+    }
+    // nhap chiu dai và chiu rong
+    let chieuDai = parseInt(prompt("Nhập chiều dài vào đây : "));
+    let chieuRong = parseInt(prompt("Nhập chiều rộng vào đây : "));
+    // kiem tra tính hợp lí
+    if (chieuDai <= chieuRong) {
+        alert("Không thể xảy ra");
+        window.location.reload();
+    } else {
+        // tạo đối tượng
+        let rectangle = new Rectangle(chieuDai,chieuRong);
+        //xuất hình vi
+        alert("Diện tích hình chữ nhật là " +rectangle.acreage());
+        alert("Chu vi hình chữ nhật là " +rectangle.perimeter());
+        let c = confirm("Thử lại");
+        if (c) {
+            window.location.reload();
+        } else {
+            alert("kết thúc")
+        }
+    }
+</script>
+</body>
+</html>
