@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phân số</title>
+</head>
+<body>
+<script>
+    // độ dài của mảng bạn muốn nhập
+    let number = parseInt(prompt("Nhập số lượng phần tử của Dãy"));
+    let arrNumerators = new Array(number);
+    let arrDenominators = new Array(number);
+    // nhập vào các phần tử của mảng A
+    for (let i = 0; i < arrNumerators.length; i++) {
+        arrNumerators[i] = parseFloat(prompt("Nhập phần tử thứ " +i + " của Numerators là"));
+    }
+    // nhập vào các phần tử của mảng B
+    for (let i = 0; i < arrDenominators.length; i++) {
+        arrDenominators[i] = parseFloat(prompt("Nhập phần tử thứ " +i + " của Denominators là"));
+    }
+
+    // xuất mảng Numberators
+    document.write("My array Numberators : ");
+    for (let i = 0; i < arrNumerators.length; i++) {
+        document.write(arrNumerators[i]+"&nbsp; ");
+    }
+    // xuất mảng Denominators
+    document.write("<br>My array Denominators : ");
+    for (let i = 0; i < arrDenominators.length; i++) {
+        document.write(arrDenominators[i]+"&nbsp; ");
+    }
+    // hàm tìm chỉ số của phân số lớn nhất
+    function maxFraction(numerators, denominators) {
+        var length = numerators.length;
+        var result = 0;
+        var max = numerators[0] / denominators[0]
+        for (let i = 0; i < length; i++) {
+            if (numerators[i] / denominators[i] > max) {
+                result = i;
+                max = numerators[i] / denominators[i];
+            }
+        }
+        return result;
+    }
+    // in chi so cua phan so lon nhat
+    document.write("<br> Chỉ số của phân số lớn nhất là " + maxFraction(arrNumerators,arrDenominators));
+</script>
+</body>
+</html>

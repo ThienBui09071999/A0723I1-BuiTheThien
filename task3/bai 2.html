@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh mảng A và B</title>
+</head>
+<body>
+<script>
+    // độ dài của mảng bạn muốn nhập
+    let numberA = parseInt(prompt("Nhập số lượng phần tử của mảng A"));
+    let arrA = new Array(numberA);
+    // nhập vào các phần tử của mảng A
+    for (let i = 0; i < arrA.length; i++) {
+        arrA[i] = parseFloat(prompt("Nhập phần tử thứ " +i + "là"));
+    }
+    // xuất mảng A
+    document.write("My array A: ");
+    for (let i = 0; i < arrA.length; i++) {
+        document.write(arrA[i]+"&nbsp; ");
+    }
+    // độ dài của mảng bạn muốn nhập
+    let numberB = parseInt(prompt("Nhập số lượng phần tử của mảng B"));
+    let arrB = new Array(numberB);
+
+    // nhập vào các phần tử của mảng B
+    for (let i = 0; i < arrB.length; i++) {
+        arrB[i] = parseFloat(prompt("Nhập phần tử thứ " +i + "là"));
+    }
+    // xuất mảng B
+    document.write("</br>My array B: ");
+    for (let i = 0; i < arrB.length; i++) {
+        document.write(arrB[i]+"&nbsp; ");
+    }
+    // xóa phần tử B
+    for (let i = 0; i < arrA.length; i++){
+        for ( let j = 0; j < arrB.length; j++){
+            if (arrA[i] === arrB[j]) {
+                arrB.splice(j,1);
+            }
+        }
+    }
+    // hàm sort mảng B
+    arrB.sort(function(a,b) {return a-b});
+    let arr = [];
+    for ( let i = 0; i < arrB.length; i++){
+        if (arrB[i] !== arrB[i+1]){
+            arr.push(arrB[i]);
+        }
+    }
+    // in mang ket qua
+    document.write("</br>My array result: ");
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i]+"&nbsp; ");
+    }
+</script>
+</body>
+</html>

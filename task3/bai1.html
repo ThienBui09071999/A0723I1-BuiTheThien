@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task3 - bai 1</title>
+</head>
+<body>
+<script>
+    // độ dài của mảng bạn muốn nhập
+    let number = parseInt(prompt("Nhập số lượng phần tử của mảng"));
+    let arrA = new Array(number);
+    // nhập vào các phần tử của mảng A
+    for (let i = 0; i < arrA.length; i++) {
+        arrA[i] = parseFloat(prompt("Nhập phần tử thứ " +i + "là"));
+    }
+    // xuất mảng A
+    document.write("My array A: ");
+    for (let i = 0; i < arrA.length; i++) {
+        document.write(arrA[i]+"&nbsp; ");
+    }
+    // khởi tạo mảng b và gán giá trị cho từng vị trí theo phương pháp prefix sum
+    let arrB = new Array(number);
+    let sum = 0;
+    for (let i=0 ;i < number; i++) {
+        sum = sum + arrA[i];
+        arrB[i] = sum;
+    }
+    // xuất mảng B
+    document.write("<br>");
+    document.write("My array B: ");
+    for (let i = 0; i < arrB.length; i++) {
+        document.write(arrB[i]+"&nbsp; ");
+    }
+</script>
+</body>
+</html>
