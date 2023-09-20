@@ -34,7 +34,7 @@
         var length = numerators.length;
         var result = 0;
         var max = numerators[0] / denominators[0]
-        for (let i = 0; i < length; i++) {
+        for (let i = 1; i < length; i++) {
             if (numerators[i] / denominators[i] > max) {
                 result = i;
                 max = numerators[i] / denominators[i];
