@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số kí tự khác nhau trong chuỗi</title>
+</head>
+<body>
+<script>
+    function differentSymbolsNaive(s) {
+        // Tạo một đối tượng Set để lưu trữ các ký tự khác nhau.
+        const uniqueChars = new Set(s);
+
+        // Duyệt qua từng ký tự trong chuỗi và thêm chúng vào Set.
+        // for (let i = 0; i < s.length; i++) {
+        //     uniqueChars.add(s[i]);
+        // }
+
+        // Trả về kích thước của Set, đại diện cho số lượng ký tự khác nhau.
+        return uniqueChars.size;
+    }
+
+    // Ví dụ s = "cabca"
+    let string = prompt("nhập chuỗi");
+    let result = differentSymbolsNaive(string);
+    document.write("số kí tự khác nhau trong chuỗi là "+result); // Kết quả sẽ là 3
+
+</script>
+</body>
+</html>

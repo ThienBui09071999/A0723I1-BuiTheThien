@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 3</title>
+</head>
+<body>
+<script>
+    // Hàm tính số ký tự chung giữa hai xâu
+    function commonCharacterCount(s1, s2) {
+        let amount = 0;
+        const arr1 = s1.split("");
+        const arr2 = s2.split("");
+
+        // Duyệt qua từng ký tự trong mảng arr1.
+        for (let i = 0; i < arr1.length; i++) {
+            const char = arr1[i]; // Lấy ký tự thứ i trong mảng arr1.
+            const indexInArr2 = arr2.indexOf(char); // Tìm vị trí của ký tự trong arr2.
+
+            // Nếu ký tự char có trong arr2.
+            if (indexInArr2 !== -1) {
+                arr2.splice(indexInArr2, 1); // Loại bỏ ký tự khỏi arr2.
+                amount += 1;
+            }
+        }
+
+        return amount; // Trả về số lượng ký tự chung.
+    }
+    // Yêu cầu người dùng nhập vào hai xâu ký tự
+    let firstString = prompt("Nhập xâu thứ nhất: ");
+    let secondString = prompt("Nhập xâu thứ hai: ");
+
+    // Gọi hàm tính số ký tự chung và lưu kết quả vào biến kyTuChung
+    // let kyTuChung = soKyTuChung(firstString, secondString);
+
+    // Hiển thị số ký tự chung cho người dùng
+    alert("Số kí tự chung: " + commonCharacterCount(firstString,secondString));
+</script>
+</body>
+</html>
