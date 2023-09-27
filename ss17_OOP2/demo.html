@@ -6,63 +6,94 @@
 </head>
 <body>
 <script>
-    class Battery {
-        constructor(energy) {
-            this.energy = energy;
-        }
-        setEnergy(energy) {
-            this.energy = energy;
-        }
-        getEnergy() {
-            return this.energy;
-        }
-        decreaseEnergy() {
-            if (this.energy > 0) {
-                this.energy--;
-            }
-        }
-    };
-    class FlashLamp {
-        constructor(battery,status) {
-            this.battery = battery;
-            this.status = status;
-        }
-        setBattery(battery) {
-            this.battery = battery;
-        }
-        getBatteryInfo() {
-            return this.battery.getEnergy();
-        }
-        light() {
-            if(this.status){
-                alert("Lighting");
-            } else {
-                alert("Not lighting");
-            }
+    // class Battery {
+    //     constructor(energy) {
+    //         this.energy = energy;
+    //     }
+    //     setEnergy(energy) {
+    //         this.energy = energy;
+    //     }
+    //     getEnergy() {
+    //         return this.energy;
+    //     }
+    //     decreaseEnergy() {
+    //         if (this.energy > 0) {
+    //             this.energy--;
+    //         }
+    //     }
+    // };
+    // class FlashLamp {
+    //     constructor(battery,status) {
+    //         this.battery = battery;
+    //         this.status = status;
+    //     }
+    //     setBattery(battery) {
+    //         this.battery = battery;
+    //     }
+    //     getBatteryInfo() {
+    //         return this.battery.getEnergy();
+    //     }
+    //     light() {
+    //         if(this.status){
+    //             alert("Lighting");
+    //         } else {
+    //             alert("Not lighting");
+    //         }
+    //
+    //     }
+    //     turnOn() {
+    //         this.status = true;
+    //         this.battery.energy-=1;
+    //     }
+    //     turnOff() {
+    //         this.status = false;
+    //     }
+    // }
+    // let battery = new Battery(20);
+    // let flashLamp = new FlashLamp(battery,false);
+    //
+    // document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    // flashLamp.light();
+    //
+    // document.write("Turn on<br/>")
+    // flashLamp.turnOn();
+    // flashLamp.light();
+    // document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    //
+    // document.write("Turn off<br/>")
+    // flashLamp.turnOff();
+    // flashLamp.light();
+    function Hero(image, top, left, size){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
 
+        this.getHeroElement = function(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
         }
-        turnOn() {
-            this.status = true;
-            this.battery.energy-=1;
+
+        this.moveRight = function(){
+            this.left += 20;
+            console.log('ok: ' + this.left);
         }
-        turnOff() {
-            this.status = false;
-        }
+
     }
-    let battery = new Battery(20);
-    let flashLamp = new FlashLamp(battery,false);
 
-    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
-    flashLamp.light();
+    var hero = new Hero('', 20, 30, 200);
 
-    document.write("Turn on<br/>")
-    flashLamp.turnOn();
-    flashLamp.light();
-    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    function start(){
+        if(hero.left < window.innerWidth - hero.size){
+            hero.moveRight();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
 
-    document.write("Turn off<br/>")
-    flashLamp.turnOff();
-    flashLamp.light();
+    start();
 </script>
 </body>
 </html>
